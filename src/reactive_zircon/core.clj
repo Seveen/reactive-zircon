@@ -19,7 +19,7 @@
 
 (defn make-app [app-config view-config]
   (let [app (app/->app app-config)
-        screen (app/->screen app)]
+        screen (app/->screen app app-config)]
     (doseq [component-def view-config
             :let [[name component] (build-and-bind component-def)
                   handle (.addComponent screen component)]]

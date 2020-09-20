@@ -9,6 +9,7 @@
     {:renderer       :swing
      :size           [20 20]
      :tileset        :rogueYun16x16
+     :color-theme    :war
      :close-behavior :no-close}
 
     [{:id          :my-panel

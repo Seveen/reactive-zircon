@@ -3,6 +3,7 @@
 (def app-config {:renderer       :swing
                  :size           [80 50]
                  :tileset        :bisasam16x16
+                 :color-theme    :entrappedInAPalette
                  :close-behavior :no-close})
 
 (def view-config [{:id          :my-panel

@@ -49,7 +49,7 @@
     :libgdx (LibgdxApplications/startApplication (app-config config))
     (SwingApplications/startApplication (app-config config))))
 
-(defn ->screen [app]
+(defn ->screen [app {:keys [color-theme] :or {color-theme :tron}}]
   (doto (Screen/create (.getTileGrid app))
-    (.setTheme (cl/color-themes :tron))
+    (.setTheme (cl/color-themes color-theme))
     (.display)))
