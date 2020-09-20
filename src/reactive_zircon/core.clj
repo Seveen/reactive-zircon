@@ -6,7 +6,7 @@
 
 (defn build-and-bind [component-def]
   (let [name (:id component-def)
-        component (c/->component (:component component-def))
+        component (c/->component component-def)
         children-def (:children component-def)]
     (if (seq children-def)
       (do
@@ -17,14 +17,14 @@
         [name component])
       [name component])))
 
-(defn make-view [view-config]
-  (let [app (app/->app (:app view-config))
+(defn make-app [app-config view-config]
+  (let [app (app/->app app-config)
         screen (app/->screen app)]
-    (doseq [component-def (:root view-config)
+    (doseq [component-def view-config
             :let [[name component] (build-and-bind component-def)
                   handle (.addComponent screen component)]]
       (swap! state/named-components assoc name handle))
-    (reset! state/view (:root view-config))
+    (reset! state/view view-config)
     (add-watch state/view :watcher w/watcher)
     state/view))
 
@@ -46,6 +46,6 @@
 
   (def button (.detach handle))
 
-  (make-view global-map)
+  (make-app global-map)
 
   )

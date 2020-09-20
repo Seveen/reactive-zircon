@@ -21,7 +21,7 @@
     (c/set-field component field new-value)))
 
 (defn split-path [path]
-  (let [[path change] (split-with (partial not= :component) path)]
+  (let [[path change] (split-with #(or (= :children %) (number? %)) path)]
     [(conj (vec path) :id) (last change)]))
 
 (defn watcher [key atom old-state new-state]
