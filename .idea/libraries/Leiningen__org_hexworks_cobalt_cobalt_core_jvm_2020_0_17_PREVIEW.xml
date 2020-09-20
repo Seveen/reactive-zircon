@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.hexworks.cobalt/cobalt.core-jvm:2020.0.17-PREVIEW">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/hexworks/cobalt/cobalt.core-jvm/2020.0.17-PREVIEW/cobalt.core-jvm-2020.0.17-PREVIEW.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
