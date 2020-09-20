@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: org.hexworks.zircon/zircon.jvm.libgdx:2020.1.6-HOTFIX">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.m2/repository/org/hexworks/zircon/zircon.jvm.libgdx/2020.1.6-HOTFIX/zircon.jvm.libgdx-2020.1.6-HOTFIX.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
