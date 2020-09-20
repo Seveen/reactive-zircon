@@ -25,11 +25,16 @@
                      :children [{:id   :my-button
                                  :type :button
                                  :text "BUTTON"
-                                 :size [10 1]}
+                                 :size [10 1]
+                                 :handlers [{:type :mouse-entered
+                                             :fn (fn [event phase] (prn "entered"))}]}
                                 {:id   :my-button2
                                  :type :button
                                  :text "BUTTON2"
-                                 :size [10 1]}
+                                 :size [10 1]
+                                 :handlers [{:type :activated
+                                             :fn (fn [event]
+                                                   (swap! view assoc-in [0 :children 0 :children 2 :children 1 :text] "clicked!"))}]}
                                 {:id       :my-hbox
                                  :type     :hbox
                                  :size     [15 5]

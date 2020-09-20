@@ -28,6 +28,10 @@
     (add-watch state/view :watcher w/watcher)
     state/view))
 
+;; TODO: add a screen state in the state atom, to hold (at least) the
+;; color theme and screen event handlers
+
+
 (comment
 
   (def app (app/->app {:renderer       :swing

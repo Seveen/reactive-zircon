@@ -1,5 +1,6 @@
 (ns reactive-zircon.component
-  (:require [reactive-zircon.interop :as i])
+  (:require [reactive-zircon.interop :as i]
+            [reactive-zircon.event :as event])
   (:import (org.hexworks.zircon.api.component ComponentAlignment)
            (org.hexworks.zircon.api.game ProjectionMode)
            (org.hexworks.zircon.api ComponentDecorations Components)
@@ -73,14 +74,17 @@
 ;; alignment
 ;; renderer
 (defn ^:private base-component
-  [builder {:keys [size position decorations] :or {size [1 1]}}]
+  [builder {:keys [size position decorations]
+            :or {size [1 1]}
+            :as params}]
   (let [[width height] size]
     (-> builder
         (.withSize width height)
         (with-decorations decorations)
         (property? position
                    #(.withPosition %1 (i/vec->pos position)))
-        (.build))))
+        (.build)
+        (event/bind-event-handlers params))))
 
 (defn ^:private base-component-with-text
   [builder {:keys [text] :or {text ""} :as params}]
